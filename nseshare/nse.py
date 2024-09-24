@@ -1,3 +1,4 @@
+#INFY SBIN TATAMOTOR  ITC LT
 import nselib
 from nselib import capital_market
 nselib.trading_holiday_calendar()
