@@ -1,16 +1,22 @@
+import pandas as pd
+import json
+import requests
 #INFY SBIN TATAMOTOR  ITC LT
 import nselib
-import pandas
 from nselib import capital_market
+read_file = pd.read_excel("stocks.xlsx")
+#list_of_stock = ['INFY', 'SBIN', 'TATAMOTOR', 'ITC', 'LT']
+#for stock in read_file[['Stocks']]:
+   #result = capital_market.price_volume_and_deliverable_position_data(stock, period='1D')
+   #print(stock)
 
-result = capital_market.nifty50_equity_list()
+#print(read_file[['Stock name']])
+
+list_of_stock = read_file.to_dict(orient='records')
+result = capital_market.week_52_high_low_report('25-09-2024')
 print(result)
-list_of_stock = ['AXISBANK', 'TAPARIA', 'AAVAS', 'AADHARHFC', 'NMDC','IDFCFIRSTB']
-print ( capital_market.equity_list());
 for stock in list_of_stock:
-    result = capital_market.price_volume_and_deliverable_position_data(stock, period='1D')
-    print(stock,result)
+    data = stock['Stock name']
+   # result = capital_market.price_volume_data(data, period='1D')
 
-
-
-
+    #print(result)
