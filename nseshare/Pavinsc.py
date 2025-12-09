@@ -5,7 +5,7 @@ from nselib import capital_market
 read_file = pd.read_excel("stocks.xlsx")
 float_column = read_file['TargetPrice']  # Replace 'ColumnName' with the actual column name
 current_date = date.today()
-yesterday = current_date - timedelta(days=3)
+yesterday = current_date - timedelta(days=1)
 today = current_date.strftime("%d-%m-%Y");
 yesday  = yesterday.strftime("%d-%m-%Y");
 

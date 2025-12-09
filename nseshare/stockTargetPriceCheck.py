@@ -6,7 +6,7 @@ from nselib import capital_market
 
 read_file = pd.read_excel("stocks.xlsx")
 current_date = date.today()
-yesterday = current_date - timedelta(days=3)
+yesterday = current_date - timedelta(days=1)
 today_str = current_date.strftime("%d-%m-%Y")
 yesday_str = yesterday.strftime("%d-%m-%Y")
 
