@@ -20,6 +20,9 @@ for stock in list_of_stock:
     targetPrice = float(str(stock['TargetPrice']))
     result = capital_market.price_volume_data(data, period='1D')
     closedPriceString = np.array2string(result['ClosePrice'].values)
+    if closedPriceString=='':
+        print('no valid close price', targetPrice, False)
+        continue
     # 1. Remove the square brackets and single quotes
     cleaned_string = closedPriceString.strip("['']")
 
