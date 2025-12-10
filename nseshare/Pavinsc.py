@@ -33,4 +33,6 @@ for stock in list_of_stock:
     closedPriceFloat = float(cleaned_string)
     #closedPriceString = result['ClosePrice'].replace(',', '')
     #closedPrice =float(closedPriceString)
-    print(data,closedPriceFloat,targetPrice,closedPriceFloat<=targetPrice)
+    verdict = "Buy" if closedPriceFloat <= targetPrice else "No Buy"
+    print(data, closedPriceFloat, targetPrice, verdict)
+    #print(data,closedPriceFloat,targetPrice,(closedPriceFloat<=targetPrice?"Buy":"No Buy"))
