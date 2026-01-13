@@ -40,7 +40,7 @@ data = capital_market.var_end_of_day(trade_date=yesday)
 # print(data.columns.values)
 output_data = []
 for stock in list_of_stock:
-    data = stock['Stock name']
+    data = stock['stock_name']
     targetPrice = float(str(stock['TargetPrice']))
     result = capital_market.price_volume_data(data, period='1D')
     closedPriceString = np.array2string(result['ClosePrice'].values)
